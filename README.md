@@ -32,8 +32,6 @@
 - Vanilla JavaScript (ES5/ES6)
 - Google Fonts — Montserrat
 
-- Локальный запуск
-
 
 | Брейкпоинт | Особенности |
 |------------|-------------|
