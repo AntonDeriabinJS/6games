@@ -1,0 +1,1525 @@
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: "Montserrat", "Segoe UI", Arial, sans-serif;
+  background-color: #ffffff;
+  color: #202027;
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+}
+
+img {
+  display: block;
+  max-width: 100%;
+  height: auto;
+}
+
+button {
+  font-family: inherit;
+  cursor: pointer;
+  border: none;
+  background: none;
+}
+
+a,
+a:link,
+a:visited,
+a:hover,
+a:active,
+a:focus {
+  text-decoration: none;
+  color: inherit;
+}
+
+.page {
+  max-width: none;
+  margin: 0 auto;
+  overflow-x: hidden;
+}
+
+/* HERO */
+.hero {
+  position: relative;
+  width: 100%;
+  max-width: none;
+  margin: 0 auto;
+  min-height: 800px;
+  padding: 0 40px;
+  background: #e1ff8f;
+  background-image: url("img/hero-bigstar.png");
+  background-repeat: no-repeat;
+  background-position: right center;
+  background-size: contain;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  z-index: 2;
+}
+
+/* Звёздочки */
+.hero__star {
+  position: absolute;
+  z-index: 1;
+}
+
+.hero__star_top {
+  width: 57px;
+  height: 57px;
+  left: 63px;
+  top: 94px;
+}
+
+.hero__star_top-small {
+  position: absolute;
+  width: 35px;
+  height: 35px;
+  left: 156px;
+  top: 69px;
+}
+
+.hero__star_down {
+  position: absolute;
+  width: 37px;
+  height: 37px;
+  left: 948px;
+  top: 538px;
+}
+
+.hero__star_down-big {
+  position: absolute;
+  width: 83px;
+  height: 83px;
+  left: 1013px;
+  top: 568px;
+}
+
+/* Мобильные звёзды скрываю на десктопе */
+.hero__star_mobile {
+  display: none;
+}
+
+
+.hero__container {
+  position: relative;
+  z-index: 2;
+  max-width: 1200px;
+  margin: 0 auto;
+  width: 100%;
+  padding-bottom: 115px;
+}
+
+.hero__content {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 24px;
+  max-width: 769px;
+  padding-top: 60px;
+}
+
+.hero__title {
+  font-family: "Montserrat", sans-serif;
+  font-weight: 700;
+  font-size: 64px;
+  line-height: 1.22;
+  color: #202027;
+  max-width: 769px;
+  max-height: 358px;
+}
+
+.hero__description {
+  font-family: "Montserrat", sans-serif;
+  font-weight: 400;
+  font-size: 24px;
+  line-height: 1.4;
+  color: #202027;
+  max-width: 720px;
+}
+
+.hero__highlight {
+  font-weight: 600;
+}
+
+.hero__button {
+  font-family: "Montserrat", sans-serif;
+  font-weight: 400;
+  font-size: 24px;
+  line-height: 1.42;
+  text-align: center;
+  color: #ffffff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 16px 28px;
+  gap: 10px;
+  width: 247px;
+  height: 66px;
+  background: #202027;
+  border: 1px solid #202027;
+  border-radius: 60px;
+  transition:
+    background-color 0.3s ease,
+    transform 0.2s ease;
+  margin-top: 24px;
+}
+
+.hero__button:hover {
+  background-color: #3a3a4a;
+  transform: translateY(-2px);
+}
+
+/* Полоса прокрутки */
+.hero__scroll-line {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  z-index: 3;
+}
+
+.scroll-line {
+  background-color: #bcec30;
+  overflow: hidden;
+  white-space: nowrap;
+  padding: 27px 0;
+  border-top: 1px solid rgba(255, 255, 255, 0.2);
+  backdrop-filter: blur(25px);
+}
+
+.scroll-line__track {
+  display: flex;
+  align-items: center;
+  gap: 51px;
+  animation: scroll-line-move 20s linear infinite;
+  width: max-content;
+}
+
+.scroll-line__item {
+  font-family: "Montserrat", sans-serif;
+  font-weight: 700;
+  font-size: 30px;
+  line-height: 1.1;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  color: #202027;
+  flex-shrink: 0;
+}
+
+.scroll-line__separator {
+  width: 36px;
+  height: 36px;
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.scroll-line__separator svg {
+  width: 100%;
+  height: 100%;
+}
+
+@keyframes scroll-line-move {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+/* Об играх  */
+.about-games {
+  width: 100%;
+  min-height: 1470px;
+  background-color: #202027;
+  padding: 94px 0;
+  position: relative;
+  overflow: hidden;
+}
+
+.about-games__big-star {
+  position: absolute;
+  width: 584.72px;
+  height: 584.72px;
+  left: 933px;
+  transform: rotate(-6.77deg);
+}
+
+.about-games__small-star {
+  position: absolute;
+  width: 31.34px;
+  height: 31.34px;
+  left: 25px;
+  top: 770px;
+  transform: rotate(5.45deg);
+}
+
+.about-games__star {
+  position: absolute;
+  width: 54.6px;
+  height: 54.6px;
+  top: 822px;
+  left: 40px;
+  transform: rotate(5.45deg);
+}
+
+.about-games__container {
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 40px;
+  position: relative;
+  z-index: 2;
+  display: grid;
+  grid-template-columns: 1fr minmax(auto, max-content) 1fr;
+  gap: 0;
+  justify-content: center;
+}
+
+.about-games__center {
+  grid-column: 2 / 3;
+  width: 100%;
+}
+
+.about-games__header {
+  margin-bottom: 72px;
+  text-align: left;
+}
+
+.about-games__title {
+  font-family: "Montserrat", sans-serif;
+  font-weight: 700;
+  font-size: 64px;
+  line-height: 1.22;
+  color: #ffffff;
+}
+
+.about-games__description {
+  font-family: "Montserrat", sans-serif;
+  font-weight: 400;
+  font-size: 24px;
+  line-height: 1.4;
+  color: #ffffff;
+  margin-top: 24px;
+  max-width: 788px;
+}
+
+.about-games__grid {
+  width: 100%;
+  max-width: 1201px;
+  margin: 0 auto;
+}
+
+.games-grid {
+  display: flex;
+  gap: 32px;
+  justify-content: center;
+  align-items: flex-start;
+}
+
+.games-grid__column {
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+  width: 378px;
+}
+
+/*  МИНИИГРЫ */
+.game-card {
+  width: 378px;
+  background-color: #ffffff;
+  border-radius: 30px;
+  overflow: hidden;
+  transition:
+    transform 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94),
+    box-shadow 0.4s ease;
+  transform-origin: center center;
+  position: relative;
+  z-index: 1;
+  display: flex;
+  flex-direction: column;
+  box-shadow: 0px 12.61px 42.25px -7.57px rgba(0, 0, 0, 0.13);
+  text-decoration: none;
+  color: inherit;
+}
+
+.game-card:hover,
+.game-card:visited,
+.game-card:active,
+.game-card:focus {
+  text-decoration: none;
+  color: inherit;
+}
+
+.game-card:hover {
+  transform: scale(1.03);
+  box-shadow: 0px 20px 50px rgba(0, 0, 0, 0.35);
+  z-index: 100;
+}
+
+.game-card__image-wrapper {
+  width: 100%;
+  height: 314px;
+  overflow: hidden;
+  position: relative;
+  border-radius: 30px 30px 0 0;
+}
+
+.game-card__image {
+  width: auto;
+  height: auto;
+  object-fit: cover;
+  display: block;
+  transition: transform 0.4s ease;
+  background: #ad61ff;
+  border-radius: 30px;
+}
+
+.game-card:hover .game-card__image {
+  transform: scale(1.05);
+}
+
+.game-card__content {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  padding: 32px 32px 36px;
+  gap: 10px;
+  width: 100%;
+}
+
+.game-card__number {
+  display: inline-flex;
+  align-items: center;
+  padding: 8px 16px 10px;
+  background: #f7f7f7;
+  border-radius: 52.58px;
+  font-family: "Montserrat", sans-serif;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 1.1;
+  color: #202027;
+}
+
+.game-card__title {
+  font-family: "Montserrat", sans-serif;
+  font-weight: 700;
+  font-size: 32px;
+  line-height: 1.22;
+  color: #202027;
+  max-width: 314px;
+}
+
+/* Модификаторы высоты карточек */
+.game-card_purple {
+  height: 473px;
+}
+
+.game-card_yellow {
+  height: 512px;
+}
+
+.game-card_blue {
+  height: 473px;
+}
+
+.game-card_green {
+  height: 551px;
+}
+
+.game-card_lime {
+  height: 512px;
+}
+
+.game-card_red {
+  height: 551px;
+}
+
+/* Цвета карточек */
+.game-card_purple .game-card__image-wrapper {
+  background-color: #c8a8ff;
+}
+
+.game-card_yellow .game-card__image-wrapper {
+  background-color: #ffdd88;
+}
+
+.game-card_blue .game-card__image-wrapper {
+  background-color: #aaddff;
+}
+
+.game-card_green .game-card__image-wrapper {
+  background-color: #aaffaa;
+}
+
+.game-card_lime .game-card__image-wrapper {
+  background-color: #ddff88;
+}
+
+.game-card_red .game-card__image-wrapper {
+  background-color: #ffaaaa;
+}
+
+/* Играть - DESKTOP */
+.games-play {
+  width: 100%;
+  background-color: #202027;
+  padding: 0 40px 144px;
+  position: relative;
+  overflow: hidden;
+}
+
+.games-play__container {
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 32px;
+  position: relative;
+  z-index: 2;
+}
+
+.games-play__title {
+  font-family: "Montserrat", sans-serif;
+  font-weight: 700;
+  font-size: 64px;
+  color: #ffffff;
+  line-height: 1.22;
+  text-align: left;
+  width: 100%;
+  margin-left: 0;
+}
+
+.game-play {
+  display: flex;
+  flex-direction: row;
+  align-items: stretch;
+  width: 100%;
+  height: 500px;
+  background: #ffffff;
+  box-shadow: 0px 20px 67px -12px rgba(0, 0, 0, 0.13);
+  border-radius: 30px;
+  overflow: hidden;
+}
+
+/* Content area - left or right side */
+.game-play__content {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  padding: 48px;
+  gap: 16px;
+  width: 50%;
+  height: 100%;
+}
+
+.game-play__name {
+width: 504px;
+font-family: 'Montserrat';
+font-style: normal;
+font-weight: 700;
+font-size: 48px;
+line-height: 59px;
+/* identical to box height */
+display: flex;
+align-items: center;
+color: #202027;
+}
+
+.game-play__description {
+  font-family: "Montserrat", sans-serif;
+  font-weight: 400;
+  font-size: 24px;
+  line-height: 1.4;
+  color: #202027;
+  max-width: 457px;
+  margin: 0;  
+}
+
+.game-play__button {
+  font-family: "Montserrat", sans-serif;
+  line-height: 1.42;
+  text-align: center;
+  color: #ffffff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 16px 28px;
+  gap: 10px;
+  width: 247px;
+  height: 66px;
+  background: #202027;
+  border: 1px solid #202027;
+  border-radius: 60px;
+  transition:
+    background-color 0.3s ease,
+    color 0.3s ease,
+    border-color 0.3s ease;
+  margin-top: 24px;
+  cursor: pointer;
+font-weight: 600;
+font-style: SemiBold;
+font-size: 24px;
+letter-spacing: 0%;
+
+}
+
+.game-play__button:hover {
+  background-color: #ffffff;
+  color: #202027;
+  border-color: #202027;
+}
+
+/* Image area */
+.game-play__image-wrapper {
+  width: 50%;
+  height: 100%;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.game-play__image-wrapper_purple {
+  background-color: #c8a8ff;
+}
+
+.game-play__image-wrapper_yellow {
+  background-color: #ffdd88;
+}
+
+.game-play__image-wrapper_blue {
+  background-color: #aaddff;
+}
+
+.game-play__image-wrapper_green {
+  background-color: #aaffaa;
+}
+
+.game-play__image-wrapper_lime {
+  background-color: #ddff88;
+}
+
+.game-play__image-wrapper_red {
+  background-color: #ffaaaa;
+}
+
+.game-play__image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+/* Footer */
+.footer {
+  width: 100%;
+  height: 150px;
+  background: #bded35;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.footer__text {
+  font-size: 24px;
+  display: flex;
+  align-items: center;
+  text-align: center;
+  color: #000000;
+  font-family: Montserrat;
+  font-weight: 600;
+  line-height: 100%;
+  letter-spacing: 0px;
+  vertical-align: middle;
+}
+
+
+/* Звёзды фона блока Мини-игры */
+.games-play__bg-stars {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  overflow: hidden;
+  pointer-events: none;
+  z-index: 1;
+}
+
+.games-play__star {
+  position: absolute;
+  pointer-events: none;
+}
+
+.games-play__star_top-right-small {
+  width: 35.15px;
+  height: 35.15px;
+  top: 93px;
+  right: 45px;
+  transform: rotate(7.08deg);
+}
+
+.games-play__star_top-right-big {
+  width: 68.86px;
+  height: 68.86px;
+  top: 126px;
+  right: 0;
+  transform: rotate(5.45deg);
+}
+
+.games-play__star_bottom-right-small {
+  width: 41px;
+  height: 41px;
+  bottom: 144px;
+  right: 111px;
+}
+
+.games-play__star_bottom-right-big {
+  width: 69px;
+  height: 69px;
+  bottom: 96px;
+  right: 41px;
+}
+
+/* Карточки игр поверх фона */
+.game-play {
+  position: relative;
+  z-index: 2;
+}
+
+/* АДАПТИВ для планшета */
+
+
+/* Допэффекты всякие */
+
+/* 1. Scroll-line items - subtle scale and color shift */
+.scroll-line__item {
+  transition: transform 0.3s ease, color 0.3s ease;
+}
+
+.scroll-line__item:hover {
+  transform: scale(1.05);
+  color: #ffffff;
+  text-shadow: 0 0 20px rgba(255, 255, 255, 0.5);
+}
+
+/* 2. Scroll-line separator - subtle rotation */
+.scroll-line__separator {
+  transition: transform 0.4s ease;
+}
+
+.scroll-line__separator:hover {
+  transform: rotate(180deg);
+}
+
+/* 3. Game-play cards  */
+.game-play {
+  transition: transform 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94),
+              box-shadow 0.4s ease;
+}
+
+.game-play:hover {
+  transform: translateY(-4px);
+  box-shadow: 0px 30px 80px rgba(0, 0, 0, 0.25);
+}
+
+/* 4. Game-card number */
+.game-card__number {
+  transition: background-color 0.3s ease,
+              color 0.3s ease,
+              transform 0.2s ease;
+}
+
+.game-card:hover .game-card__number {
+  background-color: #202027;
+  color: #ffffff;
+  transform: scale(1.02);
+}
+
+/* 5. Game-card title */
+.game-card__title {
+  transition: color 0.3s ease;
+}
+
+.game-card:hover .game-card__title {
+  color: #3a3a4a;
+}
+
+/* 6. Footer - subtle brightness increase */
+.footer {
+  transition: background-color 0.3s ease;
+}
+
+.footer:hover {
+  background-color: #c5e62f;
+}
+
+.footer__text {
+  transition: transform 0.3s ease;
+}
+
+.footer:hover .footer__text {
+  transform: scale(1.02);
+}
+
+/* 7. Hero button - enhanced with shadow on hover */
+.hero__button {
+  transition: background-color 0.3s ease,
+              transform 0.2s ease,
+              box-shadow 0.3s ease;
+}
+
+.hero__button:hover {
+  background-color: #3a3a4a;
+  transform: translateY(-2px);
+  box-shadow: 0 8px 25px rgba(32, 32, 39, 0.3);
+}
+
+/* 8. Game-play button - enhanced */
+.game-play__button {
+  transition: background-color 0.3s ease,
+              color 0.3s ease,
+              border-color 0.3s ease,
+              transform 0.2s ease,
+              box-shadow 0.3s ease;
+}
+
+.game-play__button:hover {
+  background-color: #ffffff;
+  color: #202027;
+  border-color: #202027;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(32, 32, 39, 0.15);
+}
+
+/* 9. Game-card image wrapper - subtle zoom */
+.game-card__image-wrapper {
+  transition: border-radius 0.3s ease;
+}
+
+/* 10. About-games title - subtle glow */
+.about-games__title {
+  transition: text-shadow 0.3s ease;
+}
+
+.about-games__title:hover {
+  text-shadow: 0 0 30px rgba(188, 236, 48, 0.3);
+}
+
+/* 11. Games-play title - subtle glow */
+.games-play__title {
+  transition: text-shadow 0.3s ease;
+}
+
+.games-play__title:hover {
+  text-shadow: 0 0 30px rgba(188, 236, 48, 0.3);
+}
+
+/* 12. Game-play name - color transition */
+.game-play__name {
+  transition: color 0.3s ease;
+}
+
+.game-play:hover .game-play__name {
+  color: #3a3a4a;
+}
+
+/* 13. Game-play description - subtle shift */
+.game-play__description {
+  transition: opacity 0.3s ease;
+}
+
+.game-play:hover .game-play__description {
+  opacity: 0.85;
+}
+
+/* 14. Stars in hero - subtle pulse on hover (desktop only) */
+.hero__star {
+  transition: transform 0.4s ease, opacity 0.3s ease;
+}
+
+.hero:hover .hero__star {
+  transform: scale(1.1);
+  opacity: 0.9;
+}
+
+/* 15. About-games decorative stars - subtle rotation */
+.about-games__big-star,
+.about-games__small-star,
+.about-games__star {
+  transition: transform 0.6s ease;
+}
+
+.about-games:hover .about-games__big-star {
+  transform: rotate(-6.77deg) scale(1.05);
+}
+
+.about-games:hover .about-games__small-star {
+  transform: rotate(5.45deg) scale(1.1);
+}
+
+.about-games:hover .about-games__star {
+  transform: rotate(5.45deg) scale(1.08);
+}
+
+/* ==
+   МОБИЛЬНЫЕ ХОВЕРЫ отключены или упрощены
+   ==== */
+
+@media (max-width: 860px) {
+  /* Отключаем тяжелые ховеры на мобильных */
+  .scroll-line__item:hover {
+    transform: none;
+    color: #202027;
+    text-shadow: none;
+  }
+
+  .game-play:hover {
+    transform: none;
+    box-shadow: 0px 20px 67px -12px rgba(0, 0, 0, 0.13);
+  }
+
+  .game-card:hover .game-card__number {
+    background: #f7f7f7;
+    color: #202027;
+    transform: none;
+  }
+
+  .game-card:hover .game-card__title {
+    color: #202027;
+  }
+
+  .footer:hover {
+    background-color: #bded35;
+  }
+
+  .footer:hover .footer__text {
+    transform: none;
+  }
+
+  .about-games__title:hover,
+  .games-play__title:hover {
+    text-shadow: none;
+  }
+
+  .game-play:hover .game-play__name {
+    color: #202027;
+  }
+
+  .game-play:hover .game-play__description {
+    opacity: 1;
+  }
+
+  .hero:hover .hero__star {
+    transform: none;
+    opacity: 1;
+  }
+
+  .about-games:hover .about-games__big-star,
+  .about-games:hover .about-games__small-star,
+  .about-games:hover .about-games__star {
+    transform: none;
+  }
+}
+@media (max-width: 1280px) {
+  .about-games__grid {
+    width: 100%;
+  }
+
+  .games-grid {
+    flex-wrap: wrap;
+  }
+
+  .game-play {
+    width: 100%;
+  }
+}
+
+@media (max-width: 1024px) {
+  .games-grid {
+    gap: 32px;
+  }
+
+  .hero__title {
+    font-size: 48px;
+  }
+
+  .about-games__title {
+    font-size: 48px;
+  }
+
+  .game-card__title {
+    font-size: 24px;
+  }
+
+  .games-play__title {
+    font-size: 48px;
+    text-align: left;
+    width: 100%;
+  }
+
+  .game-play {
+    flex-direction: column;
+    height: auto;
+    width: 100%;
+  }
+
+  .game-play__content,
+  .game-play__image-wrapper {
+    width: 100%;
+    height: auto;
+  }
+
+  .game-play__image-wrapper {
+    height: 300px;
+  }
+
+  .game-play__content {
+    padding: 36px;
+    gap: 12px;
+  }
+
+  .game-play__name {
+    font-size: 36px;
+  }
+
+  .game-play__description {
+    font-size: 18px;
+  }
+}
+
+/* МОБИЛЬНАЯ ВЕРСИЯ */
+@media (max-width: 860px) {
+  .about-games {
+    display: none;
+  }
+
+  .hero {
+    padding: 0 20px;
+    min-height: 725px;
+    background-position: center 80%;
+    background-size: 80% auto;
+    justify-content: flex-start;
+    padding-top: 147px;
+    background-image: none;
+  }
+
+  .hero__container {
+    padding: 0;
+    padding-bottom: 182px;
+  }
+
+  .hero__content {
+    align-items: center;
+    text-align: center;
+    gap: 24px;
+    padding-top: 0;
+    max-width: 343px;
+    margin: 0 auto;
+  }
+
+  .hero__title {
+    width: 262px;
+    height: 196px;
+    font-family: 'Montserrat';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 40px;
+    line-height: 49px;
+    display: flex;
+    align-items: center;
+    text-align: center;
+    color: #202027;
+    letter-spacing: 0px;
+    text-align: center;
+    vertical-align: middle;
+  }
+
+  .hero__description {
+    font-size: 16px;
+    text-align: center;
+    width: 296px;
+    height: 60px;
+    font-family: 'Montserrat';
+    font-style: normal;
+    font-weight: 400;
+    line-height: 20px;
+  }
+
+  .hero__button {
+    width: 285px;
+    height: 55px;
+    font-size: 16px;
+    margin-top: 12px;
+    font-family: Montserrat;
+    font-weight: 600;
+    font-size: 16px;
+    line-height: 142%;
+    letter-spacing: 0%;
+    text-align: center;
+  }
+
+  /* Скрываю ховеры на мобильных */
+  .hero__button:hover {
+    background-color: #202027;
+    color: #ffffff;
+    transform: none;
+  }
+
+  .game-play__button:hover {
+    background-color: #202027;
+    color: #ffffff;
+    border-color: #202027;
+  }
+
+  .scroll-line {
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 10px 16px;
+    gap: 4px;
+    width: 100%;
+    height: auto;
+    min-height: 36px;
+    background: #BCEC30;
+    border: 0.537198px solid rgba(255, 255, 255, 0.2);
+    backdrop-filter: blur(13.4299px);
+    overflow: hidden;
+    white-space: nowrap;
+  }
+
+  .scroll-line__track {
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    padding: 0px;
+    gap: 16px;
+    width: max-content;
+    height: auto;
+    animation: scroll-line-move 20s linear infinite;
+  }
+
+  .scroll-line__item {
+    font-family: "Montserrat", sans-serif;
+    font-weight: 700;
+    font-size: 16px;
+    line-height: 1.1;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+    color: #202027;
+    flex-shrink: 0;
+    height: auto;
+    display: flex;
+    align-items: center;
+  }
+
+  .scroll-line__separator {
+    width: 20px;
+    height: 15px;
+    flex-shrink: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .scroll-line__separator svg {
+    width: 20px;
+    height: 20px;
+  }
+
+  .hero__star_top,
+  .hero__star_top-small,
+  .hero__star_down,
+  .hero__star_down-big {
+    display: none;
+  }
+
+  /* НОВЫЕ МОБИЛЬНЫЕ ЗВЁЗДЫ */
+  .hero__star_mobile {
+    display: block;
+    position: absolute;
+    z-index: 1;
+  }
+
+  .hero__star_mobile_top-left-big {
+    width: 35px;
+    height: 35px;
+    left: 38px;
+    top: 97px;
+  }
+
+  .hero__star_mobile_top-left-small {
+    width: 21px;
+    height: 21px;
+    left: 92px;
+    top: 64px;
+  }
+
+  .hero__star_mobile_top-right-big {
+    width: auto;
+    height: auto;
+    right: -5px;
+    top: -5px;
+    transform: rotate(-1deg);
+    transform-origin: center center;
+  }
+
+  .hero__star_mobile_bottom-right-small {
+    width: 18px;
+    height: 18px;
+    left: 273px;
+    top: 557px;
+  }
+
+  .hero__star_mobile_bottom-right-big {
+    width: 39px;
+    height: 41px;
+    left: 304px;
+    top: 580px;
+  }
+  /* КОНЕЦ НОВЫХ МОБИЛЬНЫХ ЗВЁЗД */
+
+  .games-play {
+    padding: 48px 20px 48px;
+  }
+
+  .games-play__container {
+    padding: 0;
+    gap: 29.04px;
+    align-items: flex-start;
+  }
+
+  .games-play__title {
+width: 250px;
+height: 49px;
+
+font-family: 'Montserrat';
+font-style: normal;
+font-weight: 700;
+font-size: 40px;
+line-height: 49px;
+display: flex;
+align-items: center;
+color: #FFFFFF;
+
+  }
+
+  /* Картинка сверху на мобильных */
+  .game-play {
+    flex-direction: column;
+    width: 100%;
+    width: 343px;
+    border-radius: 30px;
+    overflow: hidden;
+    align-self: center;
+  }
+
+  .game-play__image-wrapper {
+    width: 100%;
+    height: 285px;
+    border-radius: 30px 30px 0 0;
+    order: -1;
+    flex-shrink: 0;
+  }
+
+  .game-play__image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 30px 30px 0 0;
+  }
+
+  .game-play__content {display: flex;
+    width: 100%;
+    padding: 29px 29px 32px;
+    gap: 10px;
+    justify-content: flex-start;
+    flex-shrink: 0;
+    align-items: flex-start;
+  }
+
+  .game-play__name {
+    font-size: 32px;
+    line-height: 1.22;
+    max-width: 285px;
+
+color: #202027;
+
+  }
+
+  .game-play__description {
+    font-size: 16px;
+    line-height: 1.4;
+    margin-top: 10px;
+    max-width: 285px;
+  }
+
+  .game-play__button {
+    width: 285px;
+    height: 55px;
+    font-size: 16px;
+    margin-top: 16px;
+  }
+
+  .footer {
+    height: 100px;
+  }
+
+  .footer__text { 
+width: 190px;
+height: 20px;
+left: calc(50% - 190px/2 + 0.5px);
+top: 4480px;
+
+font-family: 'Montserrat';
+font-style: normal;
+font-weight: 600;
+font-size: 16px;
+line-height: 20px;
+/* identical to box height */
+display: flex;
+align-items: center;
+text-align: center;
+color: #000000;
+
+  }
+}
+
+
+/* ===== МОДАЛЬНЫЕ ОКНА ===== */
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(32, 32, 39, 0.85);
+  backdrop-filter: blur(8px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 10000;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.3s ease, visibility 0.3s ease;
+}
+
+.modal-overlay--active {
+  opacity: 1;
+  visibility: visible;
+}
+
+.modal {
+  background: #ffffff;
+  border-radius: 30px;
+  padding: 40px;
+  max-width: 480px;
+  width: 90%;
+  box-shadow: 0px 20px 67px -12px rgba(0, 0, 0, 0.25);
+  transform: scale(0.9) translateY(20px);
+  transition: transform 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  font-family: "Montserrat", sans-serif;
+}
+
+.modal--active {
+  transform: scale(1) translateY(0);
+}
+
+.modal__header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.modal__title {
+  font-family: "Montserrat", sans-serif;
+  font-weight: 700;
+  font-size: 32px;
+  line-height: 1.22;
+  color: #202027;
+  margin: 0;
+}
+
+.modal__close {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  border: 2px solid #202027;
+  background: transparent;
+  color: #202027;
+  font-size: 24px;
+  font-weight: 600;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background-color 0.3s ease, color 0.3s ease, transform 0.2s ease;
+  flex-shrink: 0;
+  margin-left: 16px;
+}
+
+.modal__close:hover {
+  background: #202027;
+  color: #ffffff;
+  transform: rotate(90deg);
+}
+
+.modal__body {
+  margin-bottom: 28px;
+}
+
+.modal__text {
+  font-family: "Montserrat", sans-serif;
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 1.5;
+  color: #202027;
+  margin: 0 0 16px 0;
+  white-space: pre-line;
+}
+
+.modal__input {
+  width: 100%;
+  padding: 16px 20px;
+  border: 2px solid #202027;
+  border-radius: 16px;
+  font-family: "Montserrat", sans-serif;
+  font-weight: 400;
+  font-size: 18px;
+  color: #202027;
+  background: #f7f7f7;
+  outline: none;
+  transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.modal__input:focus {
+  border-color: #bcec30;
+  box-shadow: 0 0 0 4px rgba(188, 236, 48, 0.3);
+}
+
+.modal__input::placeholder {
+  color: #999;
+}
+
+.modal__options {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  margin-top: 8px;
+}
+
+.modal__option-btn {
+  width: 100%;
+  padding: 16px 24px;
+  background: #f7f7f7;
+  border: 2px solid #202027;
+  border-radius: 16px;
+  font-family: "Montserrat", sans-serif;
+  font-weight: 600;
+  font-size: 18px;
+  color: #202027;
+  cursor: pointer;
+  text-align: left;
+  transition: background-color 0.3s ease, color 0.3s ease, transform 0.2s ease;
+}
+
+.modal__option-btn:hover {
+  background: #202027;
+  color: #ffffff;
+  transform: translateX(4px);
+}
+
+.modal__footer {
+  display: flex;
+  gap: 12px;
+  justify-content: flex-end;
+}
+
+.modal__button {
+  padding: 14px 28px;
+  border-radius: 60px;
+  font-family: "Montserrat", sans-serif;
+  font-weight: 600;
+  font-size: 16px;
+  cursor: pointer;
+  transition: background-color 0.3s ease, color 0.3s ease, transform 0.2s ease, box-shadow 0.3s ease;
+  border: 2px solid #202027;
+}
+
+.modal__button_primary {
+  background: #202027;
+  color: #ffffff;
+}
+
+.modal__button_primary:hover {
+  background: #ffffff;
+  color: #202027;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(32, 32, 39, 0.15);
+}
+
+.modal__button_secondary {
+  background: #ffffff;
+  color: #202027;
+}
+
+.modal__button_secondary:hover {
+  background: #f7f7f7;
+  transform: translateY(-2px);
+}
+
+/* Адаптив модалок */
+@media (max-width: 860px) {
+  .modal {
+    padding: 24px;
+    border-radius: 20px;
+    max-width: 95%;
+  }
+
+  .modal__title {
+    font-size: 24px;
+  }
+
+  .modal__text {
+    font-size: 16px;
+  }
+
+  .modal__input {
+    padding: 12px 16px;
+    font-size: 16px;
+  }
+
+  .modal__option-btn {
+    padding: 12px 20px;
+    font-size: 16px;
+  }
+
+  .modal__button {
+    padding: 12px 20px;
+    font-size: 14px;
+  }
+
+  .modal__close {
+    width: 32px;
+    height: 32px;
+    font-size: 20px;
+  }
+}
